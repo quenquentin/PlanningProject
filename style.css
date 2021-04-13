@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(114, 114, 114);
+}
+
+/*Div qui créer la boîte du menu principal*/
+.menu {
+    margin: 2em auto ;
+    background-color: rgb(21, 21, 92);
+    padding-bottom: 1em;
+    width: 35%;
+    height: 90%;
+    border-radius: 80px 0 0 0;
+    box-shadow: 7px 5px 0 -1px rgba(0, 0, 0, 0.74);
+    -webkit-box-shadow: 7px 5px 0 -1px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: 7px 5px 0 -1px rgba(0, 0, 0, 0.74);
+}
+
+/* Texte dans la div menu*/
+.text {
+    padding: 1em;
+    margin: 0 1em 1em 1em;
+    background-color: rgb(226, 226, 226);
+}
+
+.logo {
+    text-align: center;
+    height: 10%;
+}
+
+.logo img{
+    margin: 2% 0 2% 0;
+    width: 40%;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.confirmButton{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    margin-left: 1em;
+    text-align: center;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.confirmButton:hover {
+    background-color: rgb(21, 21, 92);
+    color: white;
+  }
+.confirmButton:active {
+    background-color: rgb(21, 21, 92);
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
+}
