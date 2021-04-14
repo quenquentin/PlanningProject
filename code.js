@@ -24,7 +24,7 @@ function tirer() {
     }
 }
 
-for (let i=1; test <= horaire.length;i++) {
+for (let i=1; i <= horaire.length;i++) {
     tirer(); // Permet le nombre de tirage en fonction du nombre d'horaire
 } 
 
