@@ -1,34 +1,30 @@
 /* Ce programme est destiné à la création automatique d'un planning selon
 certains critères prédéfinis et modifiables. */
 
-/* 4 horaires principaux : 7h45 / 9h30 / 12h15 / nuit (20h) */
+/* 4 horaires principaux : 7h45 / 9h30 / 12h15 / nuit (20h) 
 
-let personnel = ["Céline", "Didier", "Roger", "Manon", "Emy"]
-let horaire = ["7h45", "9h30", "12h15", "20h", 0]
+TODO : Faire sur 5 jours + 2 jours de weekend avec les horaires ci-dessous
+=> 8h / 20h
+=> Avec 7 personnes*/
+
+let personnel = ["Céline", "Didier", "Roger", "Manon", "Emy","Maxime","Léa"]
+let horaire = ["7h45", "9h30", "12h15", "20h", 0, 0, 0]
 let results = []
+const horaireLenght = horaire.length;
 
 
-function tirer() {
-    let random = Math.floor(Math.random() * personnel.length);
-    let random_horaire = Math.floor(Math.random() * horaire.length);
 
-    let choosen = personnel[random]; // selection un mec random depuis le tableau "personnel"
-    let choosen_horaire = horaire[random_horaire];
-
-    if (results.some(row => row.includes(choosen)) || results.some(row => row.includes(choosen_horaire))) { // vérifie si "choosen" ou "choosen_horaire" existe déjà dans la matrice "results"
-        console.log('Déjà choisi !');
-        tirer(); // relance la fonction
-    } else {
-        results.push([choosen, choosen_horaire]); // met "choosen" et "choosen_horaire" dans la matrice results
-        console.log(results);
+    function tirer() {
+        for (i = 0; i < horaireLenght; i++) {
+            let random = Math.floor(Math.random() * personnel.length);
+            let random_horaire = Math.floor(Math.random() * horaire.length);
+    
+            let choosen = personnel[random]; // selection un mec random depuis le tableau "personnel"
+            let choosen_horaire = horaire[random_horaire];
+            results.push([choosen, choosen_horaire]); // met "choosen" et "choosen_horaire" dans la matrice results
+            horaire.splice([random_horaire], 1); // Retirage de la personne + de l'horaire des array
+            personnel.splice([random], 1);
     }
-}
-
-for (let i=1; i <= horaire.length;i++) {
-    tirer(); // Permet le nombre de tirage en fonction du nombre d'horaire
-} 
-
-function sayName() { 
     for (result of results) {
 
         if (result[1] === 0) {
@@ -38,6 +34,7 @@ function sayName() {
             console.log(result[0] + " travaillera à " + result[1]);
         }
     }
-}
+        }
+    tirer();
 
-sayName();
+    
