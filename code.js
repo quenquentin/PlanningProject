@@ -3,8 +3,7 @@ certains critères prédéfinis et modifiables. */
 
 /* 4 horaires principaux : 7h45 / 9h30 / 12h15 / nuit (20h)
 TODO: Fonctionnel sur 1 mois entier (cf dates IRL)
-=> Envoyer sur un format excel
-=> Remplir avec des inputs sur le site 1/5*/
+=> Envoyer sur un format excel */
 
 function start() {
     const coPersonnel = [] //  Personnel de trvaille 
@@ -41,15 +40,17 @@ function start() {
     let horaireW = coHoraireW.slice();
     let results = [];
 
+    for (let i = 1; i <= week; i++) {
 
-    for (let i = 0; i < nmDayS; i++) {
-        tirerS();
+        console.log("-----NEW WEEK-----")
+        for (let i = 1; i <= nmDayS; i++) {
+            tirerS();
+        }
+
+        for (let i = 1; i <= nmDayW; i++) {
+            tirerW();
+        }
     }
-
-    for (let i = 0; i < nmDayW; i++) {
-        tirerW();
-    }
-
     function tirerS() {
         for (i = 0; i < personnelLenght; i++) {
             let random = Math.floor(Math.random() * personnel.length);
