@@ -11,7 +11,7 @@ body {
     padding-bottom: 1em;
     width: 35%;
     height: 90%;
-    border-radius: 80px 0 0 0;
+    border-radius: 4em 0 0 0;
     box-shadow: 7px 5px 0 -1px rgba(0, 0, 0, 0.74);
     -webkit-box-shadow: 7px 5px 0 -1px rgba(0, 0, 0, 0.74);
     -moz-box-shadow: 7px 5px 0 -1px rgba(0, 0, 0, 0.74);
@@ -55,4 +55,7 @@ body {
     background-color: rgb(21, 21, 92);
     box-shadow: 0 1px #666;
     transform: translateY(1px);
+}
+.inputbtn {
+    margin-bottom: 1em;
 }
